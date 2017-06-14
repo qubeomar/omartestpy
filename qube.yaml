@@ -1,0 +1,32 @@
+id: b16aeaae-b5ff-497d-a909-d5b98027ca95
+version: v2
+name: MyJava2
+apptype: api
+language: python
+containerName: myjava2
+toolchain:
+  id: 58e3fad09a148400216611cc
+  name: Qubeship-Python-Toolchain
+opinion:
+  id: 5930725dc07d6a9b2f54a244
+  name: Qubeship build-bake-deploy opinion
+endpoint:
+  id: 59407d79d8192b001fb10ba0
+  name: MyEndpoint
+  type: target
+variables:
+  - name: APP_VERSION
+    value: v0.1
+build:
+  compile:
+    publish:
+     - dist/
+bake:
+  skip: false
+test:
+  skip: true
+deploy_to_qa:
+  skip: true
+deploy_to_prod:
+  skip: false
+
